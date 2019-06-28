@@ -34,7 +34,7 @@ public class JpaRunner implements ApplicationRunner {
 //
 //        session.save(account);
 //        session.save(study);
-//
+
 //        Post post = new Post();
 //        post.setTitle("달려달려");
 //
@@ -47,8 +47,9 @@ public class JpaRunner implements ApplicationRunner {
 //        post.addComment(comment1);
 
         Session session = entityManager.unwrap(Session.class);
-        Post post = session.get(Post.class, 1L);
-        session.delete(post);
-        //session.save(post);
+        Post post = session.get(Post.class, 10L);
+//        session.save(post);
+        System.out.println("result : " + post.toString());
+
     }
 }

@@ -2,6 +2,7 @@ package com.example.jpa;
 
 import lombok.Getter;
 import lombok.Setter;
+import net.bytebuddy.dynamic.scaffold.FieldLocator;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -17,7 +18,7 @@ public class Post {
 
     private String title;
 
-    @OneToMany(mappedBy = "post", cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Comment> comments = new HashSet<>();
 
     public void addComment(Comment comment) {
