@@ -17,15 +17,15 @@ public class BookRunner implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
-        Book book = new Book();
-        book.setId(1);
-        book.setName("이름");
-        bookRepository.save(book);
-        book.setId(2);
-        book.setName("이름2");
-        bookRepository.save(book);
-
-        List<Book> book1 = bookRepository.findAll();
-        System.out.println("test : " + book1.size());
+//        Book book = new Book();
+//        book.setId(1);
+//        book.setName("이름");
+//        bookRepository.save(book);
+//        book.setId(2);
+//        book.setName("이름2");
+//        bookRepository.save(book);
+//
+//        List<Book> book1 = bookRepository.findAll();
+//        System.out.println("test : " + book1.size());
     }
 }

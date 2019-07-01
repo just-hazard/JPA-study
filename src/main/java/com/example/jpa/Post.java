@@ -2,6 +2,7 @@ package com.example.jpa;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import net.bytebuddy.dynamic.scaffold.FieldLocator;
 
 import javax.persistence.*;
@@ -24,5 +25,13 @@ public class Post {
     public void addComment(Comment comment) {
         this.getComments().add(comment);
         comment.setPost(this);
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                '}';
     }
 }
