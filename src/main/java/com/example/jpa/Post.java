@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static java.util.stream.Collectors.toSet;
+
 @Entity
 @Getter
 @Setter
@@ -19,7 +21,7 @@ public class Post {
 
     private String title;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private Set<Comment> comments = new HashSet<>();
 
     public void addComment(Comment comment) {
@@ -32,6 +34,7 @@ public class Post {
         return "Post{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", comments=" + comments.stream().map(Comment::getComment).collect(toSet()) +
                 '}';
     }
 }

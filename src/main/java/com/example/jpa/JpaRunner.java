@@ -58,15 +58,15 @@ public class JpaRunner implements ApplicationRunner {
         posts.forEach(System.out::println);
 
         // 챕터8 JPA를 사용하는 방법
-        postRepository.findAll().forEach(System.out::println);
+        System.out.println(postRepository.findAll().toString());
 
-        Post post = new Post();
-        post.setTitle("JPA");
-
-        Comment comment = new Comment();
-        comment.setComment("Study");
-
-        postRepository.save(post);
+//        Post post = new Post();
+//        post.setTitle("JPA");
+//
+//        Comment comment = new Comment();
+//        comment.setComment("Study");
+//
+//        postRepository.save(post);
 
 
 //        Session session = entityManager.unwrap(Session.class);
