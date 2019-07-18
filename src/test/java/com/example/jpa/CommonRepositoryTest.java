@@ -19,23 +19,31 @@ public class CommonRepositoryTest {
     @Autowired
     CommonRepository commonRepository;
 
+    @Autowired
+    CommentRepository commentRepository;
+
+
     @Test
     public void crud() {
         Comment comment = new Comment();
         comment.setComment("Hello Comment");
         commonRepository.save(comment);
 
-        List<Comment> all = commonRepository.findAll();
-        assertThat(all.size()).isEqualTo(1);
+        List<Comment> hello = commentRepository.findByCommentContains("Hello");
+        assertThat(hello.size()).isEqualTo(1);
 
-        long count = commonRepository.count();
-        assertThat(count).isEqualTo(1);
+//        List<Comment> all = commonRepository.findAll();
+//        assertThat(all.size()).isEqualTo(1);
+//
+//        long count = commonRepository.count();
+//        assertThat(count).isEqualTo(1);
+//
+//        Optional<Comment> byId = commonRepository.findById(100L);
+//        assertThat(byId).isEmpty();
+//        //Comment comment1 = byId.orElseThrow(IllegalAccessError::new);
+//
+//        commonRepository.save(null);
 
-        Optional<Comment> byId = commonRepository.findById(100L);
-        assertThat(byId).isEmpty();
-        Comment comment1 = byId.orElseThrow(IllegalAccessError::new);
-
-        commonRepository.save(null);
 
     }
 }
