@@ -35,13 +35,13 @@ public class PostRepositoryTest {
         // Then
         assertThat(newPost.getId()).isNotNull();
         
-        // When  
+        // When
         List<Post> posts = postRepository.findAll();
-        
+
         // Then
         assertThat(posts.size()).isEqualTo(1);
         assertThat(posts).contains(newPost);
-        
+
         // When
         Page<Post> page = postRepository.findAll(PageRequest.of(0, 10));
         assertThat(page.getTotalElements()).isEqualTo(1);

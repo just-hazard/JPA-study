@@ -8,6 +8,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
@@ -24,13 +26,22 @@ public class CommonRepositoryTest {
 
 
     @Test
-    public void crud() {
+    public void crud() throws ExecutionException, InterruptedException {
         Comment comment = new Comment();
         comment.setComment("Hello Comment");
         commonRepository.save(comment);
 
-        List<Comment> hello = commentRepository.findByCommentContains("Hello");
-        assertThat(hello.size()).isEqualTo(1);
+//        List<Comment> hello = commentRepository.findByCommentContainsIgnoreCase("Hello");
+//        assertThat(hello.size()).isEqualTo(1);
+
+        Future<List<Comment>> future =
+                commentRepository.findByCommentContainsIgnoreCase("Hello");
+        System.out.println("=========");
+        System.out.println("is done?" + future.isDone());
+
+        List<Comment> comments = future.get();
+        comments.forEach(System.out::println);
+
 
 //        List<Comment> all = commonRepository.findAll();
 //        assertThat(all.size()).isEqualTo(1);
