@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface WebFunctionRepository extends JpaRepository<WebFunction,Long> {
 
-    List<WebFunction> findByTitleStartsWith();
+    //List<WebFunction> findByTitleStartsWith();
 
     @Modifying(clearAutomatically = true)
     @Query("UPDATE WebFunction w Set w.title = ?1 where w.id = ?2")
