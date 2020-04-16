@@ -18,4 +18,11 @@ public class WebComment {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private WebFunction webFunction;
+
+    private int up;
+
+    private int down;
+
+    private boolean best;
+
 }

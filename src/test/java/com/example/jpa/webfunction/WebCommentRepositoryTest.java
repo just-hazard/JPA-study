@@ -34,12 +34,19 @@ public class WebCommentRepositoryTest {
 //
 //        Optional<WebComment> byId = webCommentRepository.findById(1l);
 
-        webCommentRepository.getById(1l);
+//        webCommentRepository.getById(1l);
+//
+//        System.out.println("===========================");
+//
+//        webCommentRepository.findById(1l);
 
-        System.out.println("===========================");
+        webCommentRepository.findByWebFunction_Id(1l);
 
-        webCommentRepository.findById(1l);
+    }
 
+    @Test
+    public void specs() {
+        webCommentRepository.findAll(WebCommentSpecs.isbBest().and(WebCommentSpecs.isGood()));
     }
 
 }
