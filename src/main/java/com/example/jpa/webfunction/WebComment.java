@@ -1,6 +1,5 @@
 package com.example.jpa.webfunction;
 
-import com.example.jpa.Account;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedBy;
