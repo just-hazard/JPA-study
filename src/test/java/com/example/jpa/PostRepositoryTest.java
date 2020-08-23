@@ -34,7 +34,7 @@ public class PostRepositoryTest {
 
         // Then
         assertThat(newPost.getId()).isNotNull();
-        
+
         // When
         List<Post> posts = postRepository.findAll();
 
@@ -51,7 +51,7 @@ public class PostRepositoryTest {
 
         // When
 
-        postRepository.findByTitleContains("spring",PageRequest.of(0,10));
+        postRepository.findByTitleContains("spring", PageRequest.of(0, 10));
 
         assertThat(page.getTotalElements()).isEqualTo(1);
         assertThat(page.getNumber()).isEqualTo(0);

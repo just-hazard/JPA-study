@@ -29,13 +29,13 @@ public class WebFunctionControllerTest {
     WebFunctionRepository webFunctionRepository;
 
     @Test
-    public void crud() throws Exception{
+    public void crud() throws Exception {
 
         WebFunction webFunction = new WebFunction();
         webFunction.setTitle("double");
         webFunctionRepository.save(webFunction);
 
-        mockMvc.perform(get("/webfunctions/"+webFunction.getId()))
+        mockMvc.perform(get("/webfunctions/" + webFunction.getId()))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(content().string("double"));
@@ -73,7 +73,7 @@ public class WebFunctionControllerTest {
     public void updateTitle() {
         WebFunction F5 = createWebFunctions();
 
-        int updateCount = webFunctionRepository.updateTitle("박경",F5.getId());
+        int updateCount = webFunctionRepository.updateTitle("박경", F5.getId());
         assertThat(updateCount).isEqualTo(1);
 
         Optional<WebFunction> byId = webFunctionRepository.findById(F5.getId());

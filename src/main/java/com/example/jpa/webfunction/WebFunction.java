@@ -10,7 +10,8 @@ import java.util.Date;
 @Data
 public class WebFunction {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String title;

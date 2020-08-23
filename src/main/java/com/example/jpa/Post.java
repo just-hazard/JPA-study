@@ -16,7 +16,8 @@ import static java.util.stream.Collectors.toSet;
 @Setter
 public class Post {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String title;

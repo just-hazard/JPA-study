@@ -13,7 +13,8 @@ import java.util.Date;
 @Setter
 public class Custom extends AbstractAggregateRoot<Custom> {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String title;

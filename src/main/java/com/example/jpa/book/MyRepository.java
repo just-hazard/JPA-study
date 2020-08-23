@@ -8,8 +8,9 @@ import org.springframework.lang.Nullable;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
+
 @NoRepositoryBean
-public interface MyRepository<T, Id extends Serializable> extends Repository<T,Id> {
+public interface MyRepository<T, Id extends Serializable> extends Repository<T, Id> {
 
     <E extends T> E save(@NonNull E entity);
 

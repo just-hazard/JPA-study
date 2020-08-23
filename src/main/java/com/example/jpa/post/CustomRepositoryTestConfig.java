@@ -8,6 +8,6 @@ public class CustomRepositoryTestConfig {
 
     @Bean
     public PostListener postListener() {
-        return  new PostListener();
+        return new PostListener();
     }
 }

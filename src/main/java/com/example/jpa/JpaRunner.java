@@ -53,7 +53,7 @@ public class JpaRunner implements ApplicationRunner {
 //        post.addComment(comment1);
 
         // 챕터7 쿼리
-        TypedQuery<Post> query = entityManager.createQuery("select p from Post as p",Post.class);
+        TypedQuery<Post> query = entityManager.createQuery("select p from Post as p", Post.class);
         List<Post> posts = query.getResultList();
         posts.forEach(System.out::println);
 

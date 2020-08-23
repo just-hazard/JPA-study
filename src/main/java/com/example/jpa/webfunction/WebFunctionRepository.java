@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface WebFunctionRepository extends JpaRepository<WebFunction,Long> {
+public interface WebFunctionRepository extends JpaRepository<WebFunction, Long> {
 
     //List<WebFunction> findByTitleStartsWith();
 

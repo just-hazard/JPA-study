@@ -14,7 +14,8 @@ import javax.persistence.ManyToOne;
 @Setter
 public class Study {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;

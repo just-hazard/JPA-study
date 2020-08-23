@@ -18,7 +18,8 @@ import java.time.LocalDate;
 @Setter
 public class WebComment {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String comment;

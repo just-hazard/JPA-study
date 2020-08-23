@@ -12,7 +12,8 @@ import javax.persistence.Id;
 @Setter
 public class WebAccount {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String username;

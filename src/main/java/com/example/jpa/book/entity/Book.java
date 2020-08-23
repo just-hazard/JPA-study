@@ -11,7 +11,8 @@ import java.time.LocalDateTime;
 @Data
 public class Book {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private int id;
 
     private String name;

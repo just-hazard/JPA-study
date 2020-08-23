@@ -16,5 +16,4 @@ public interface CommonRepository extends MyRepository<Comment, Long> {
     long count();
 
 
-
 }

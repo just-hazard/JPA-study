@@ -25,7 +25,6 @@ public class CommonRepositoryTest {
     CommentRepository commentRepository;
 
 
-
     @Test
     public void crud() throws ExecutionException, InterruptedException {
         Comment comment = new Comment();

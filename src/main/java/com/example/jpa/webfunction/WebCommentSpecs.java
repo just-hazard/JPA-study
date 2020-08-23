@@ -15,6 +15,6 @@ public class WebCommentSpecs {
     }
 
     public static Specification<WebComment> isGood() {
-        return (Specification<WebComment>) (root, query, builder) -> builder.greaterThanOrEqualTo(root.get(WebComment_.up),10);
+        return (Specification<WebComment>) (root, query, builder) -> builder.greaterThanOrEqualTo(root.get(WebComment_.up), 10);
     }
 }
